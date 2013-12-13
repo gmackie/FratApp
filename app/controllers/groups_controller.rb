@@ -9,12 +9,14 @@ class GroupsController < ApplicationController
 
   def show
     @group = Group.find(params[:id])
+    @users = @group.users
     @microposts = @group.microposts.paginate(page: params[:page])
     @comment = Comment.new
   end
   
   def new
     @group = Group.new
+    @group.users.build
   end
 
   def create
@@ -24,6 +26,17 @@ class GroupsController < ApplicationController
       redirect_to @group
     else
       render 'new'
+    end
+  end
+
+  def addUser
+    @group = Group.find(params[:id])
+    @group.users<<User.find(params[:user_id])
+    if @group.update_attributes(add_user_params)
+      flash[:success] = "User Added to group"
+      redirect_to @group
+    else
+      redirect_to root_path
     end
   end
 
@@ -46,6 +59,10 @@ class GroupsController < ApplicationController
   end
 
   private
+    
+    def add_user_params
+      params.permit(:id, :name, :users)
+    end
 
     def groups_params
       params.require(:group).permit(:name)

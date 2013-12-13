@@ -15,6 +15,7 @@ SampleApp::Application.routes.draw do
   resources :groups
   root to: 'static_pages#home'
   match '/newgroup',  to: 'groups#new',           via: 'get'
+  match '/joingroup', to: 'groups#addUser',       via: 'get'
   match '/signup',    to: 'users#new',            via: 'get'
   match '/signin',    to: 'sessions#new',         via: 'get'
   match '/signout',   to: 'sessions#destroy',     via: 'delete'
