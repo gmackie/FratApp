@@ -1,0 +1,6 @@
+<% if comments.any? %>
+  <ol class="comments">
+    <%= render partial: 'shared/comment_item', collection: comments %>
+  </ol>
+  <%= will_paginate comments %>
+<% end %>
