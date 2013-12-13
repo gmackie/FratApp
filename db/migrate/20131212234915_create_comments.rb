@@ -6,6 +6,6 @@ class CreateComments < ActiveRecord::Migration
       t.integer :micropost_id
       t.timestamps
     end
-    add_index :microposts, [:micropost_id, :created_at]
+    add_index :comments, [:micropost_id, :created_at]
   end
 end
