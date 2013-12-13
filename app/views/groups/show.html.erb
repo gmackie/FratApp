@@ -1,0 +1,23 @@
+<% provide(:title, @group.name) %>
+<div class="row">
+  <aside class="span4">
+    <section>
+      <h1>
+        <%= image_for @group %>
+        <%= @group.name %>
+      </h1>
+    </section>
+    <section>
+
+    </section>
+  </aside>
+  <div class="span8">
+    <% if @group.microposts.any? %>
+      <h3>Microposts (<%= @group.microposts.count %>)</h3>
+      <ol class="microposts">
+        <%= render @microposts %>
+      </ol>
+      <%= will_paginate @microposts %>
+    <% end %>
+  </div>
+</div>

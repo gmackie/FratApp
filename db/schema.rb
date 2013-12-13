@@ -21,9 +21,23 @@ ActiveRecord::Schema.define(version: 20131212234915) do
     t.datetime "updated_at"
   end
 
+  create_table "groups", force: true do |t|
+    t.string   "name"
+    t.integer  "group_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "groups_users", force: true do |t|
+    t.integer "group_id"
+    t.integer "user_id"
+  end
+>>>>>>> added groups
+
   create_table "microposts", force: true do |t|
     t.string   "content"
     t.integer  "user_id"
+    t.integer  "group_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
