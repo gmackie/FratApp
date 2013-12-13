@@ -2,6 +2,10 @@
   <%= link_to gravatar_for(micropost.user), micropost.user %>
   <span class="user">
     <%= link_to micropost.user.name, micropost.user %>
+    <% if current_page? root_path %>
+      <span class=""> --> </span>
+        <%= link_to micropost.group.name, micropost.group %>
+    <% end %>
   </span>
   <span class="content"><%= micropost.content %></span>
   <span class="timestamp">
