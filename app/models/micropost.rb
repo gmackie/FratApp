@@ -2,7 +2,7 @@ class Micropost < ActiveRecord::Base
   belongs_to :user    # foreign key - user_id
   belongs_to :group   # foreign key - group_id
   has_many :comments, dependent: :destroy
-  default_scope -> { order('created_at DESC') }
+  default_scope -> { order('updated_at DESC') }
   validates :content, presence: true
   validates :user_id, presence: true
   

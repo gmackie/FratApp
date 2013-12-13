@@ -8,6 +8,7 @@ class CommentsController < ApplicationController
     @comment.micropost = @micropost
     @comment.user = current_user
     if @comment.save
+      @micropost.touch
       flash[:success] = "Comment created"
       redirect_to root_url
     else
