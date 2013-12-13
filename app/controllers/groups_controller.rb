@@ -11,6 +11,9 @@ class GroupsController < ApplicationController
     @group = Group.find(params[:id])
     @users = @group.users
     @microposts = @group.microposts.paginate(page: params[:page])
+    if @users.include? current_user
+      @micropost = current_user.microposts.build
+    end
     @comment = Comment.new
   end
   

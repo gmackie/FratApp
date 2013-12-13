@@ -7,6 +7,11 @@
         <%= @group.name %>
       </h1>
     </section>
+    <% if @group.users.include? current_user %>
+    <section>
+      <%= render 'shared/micropost_form' %>
+    </section>
+    <% end %>
     <section>
       <% if @users.any? %>
         <ol class="users">
