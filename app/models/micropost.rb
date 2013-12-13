@@ -3,7 +3,7 @@ class Micropost < ActiveRecord::Base
   belongs_to :group   # foreign key - group_id
   has_many :comments, dependent: :destroy
   default_scope -> { order('created_at DESC') }
-  validates :content, presence: true, length: { maximum: 140 }
+  validates :content, presence: true
   validates :user_id, presence: true
   
   # Returns microposts from the users being followed by the given user.
