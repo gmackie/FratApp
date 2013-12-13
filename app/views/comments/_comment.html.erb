@@ -1,5 +1,6 @@
 <li>
-  <%= link_to gravatar_for(comment.user), comment.user %>
+  <div class="commentblock">
+    <%= link_to gravatar_for(comment.user, {:size => 25}), comment.user %>
     <span class="user">
       <%= link_to comment.user.name, comment.user %>
     </span>
@@ -7,9 +8,10 @@
     <span class="timestamp">
       Posted <%= time_ago_in_words(comment.created_at) %> ago.
     </span>
-  <% if current_user?(comment.user) %>
+    <% if current_user?(comment.user) %>
     <%= link_to "delete", comment, method: :delete,
                                      data: { confirm: "You sure?" },
                                      title: comment.content %>
   <% end %>
+  </div>
 </li>
