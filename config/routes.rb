@@ -1,4 +1,6 @@
 SampleApp::Application.routes.draw do
+  get "comments/create"
+  get "comments/destroy"
   resources :users do
     member do
       get :following, :followers
