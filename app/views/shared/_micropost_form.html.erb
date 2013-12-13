@@ -1,7 +1,7 @@
 <%= form_for(@micropost) do |f| %>
   <%= render 'shared/error_messages', object: f.object %>
   <div class="field">
-    <%= f.select :group_id, options_for_select(Group.all.collect { |u| [u.name, u.id]}),
+    <%= f.select :group_id, options_for_select(current_user.groups.collect { |u| [u.name, u.id]}),
 
                           { :include_blank => 'None',
                             :multiple => true,
