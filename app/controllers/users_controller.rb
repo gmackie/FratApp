@@ -22,8 +22,13 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     if @user.save
       sign_in @user
-      flash[:success] = "Welcome to the Sample App!"
-      redirect_to @user
+      if Group.all.size < 1
+        flash[:success] = "Welcome to FratApp, please create a base group"
+        redirect_to newgroup_path
+      else
+        flash[:success] = "Welcome to FratApp!"
+        redirect_to @user
+      end
     else
       render 'new'
     end
