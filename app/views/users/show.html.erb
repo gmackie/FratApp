@@ -1,8 +1,16 @@
 <% provide(:title, @user.name) %>
-<% if @user.microposts.any? %>
-  <h3>Microposts (<%= @user.microposts.count %>)</h3>
-  <ol class="microposts">
-    <%= render @microposts %>
-  </ol>
-  <%= will_paginate @microposts %>
-<% end %>
+    <section>
+      <b>Pledge Class:</b>
+      <%= @user.pledge_semester +  " " + @user.pledge_year.to_s %>
+    </section>
+    <section>
+      <%= "Graduation Year: " + @user.grad_year.to_s %>
+    </section>
+    <section>
+      <%= "Major: " + @user.major %>
+    </section>
+      <% if @user.admin? %>
+        <section>
+          <%= "Administrator" %>
+        </section>
+      <% end %>
