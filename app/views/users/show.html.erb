@@ -1,15 +1,21 @@
 <% provide(:title, @user.name) %>
     <section>
       <b>Pledge Class:</b>
-      <%= @user.pledge_semester +  " " + @user.pledge_year.to_s %>
+      <% if not (@user.pledge_semester.nil? or @user.pledge_year.nil?) %>
+        <%= @user.pledge_semester +  " " + @user.pledge_year.to_s %>
+      <% end %>
     </section>
     <section>
       <b>Graduation Year:</b>
-      <%= @user.grad_year.to_s %>
+      <% if not @user.grad_year.nil? %>
+        <%= @user.grad_year.to_s %>
+      <% end %>
     </section>
     <section>
       <b>Major:</b>
-      <%= @user.major %>
+      <% if not @user.major.nil? %>
+        <%= @user.major %>
+      <% end %>
     </section>
       <% if @user.admin? %>
         <section>
