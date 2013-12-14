@@ -4,10 +4,12 @@
       <%= @user.pledge_semester +  " " + @user.pledge_year.to_s %>
     </section>
     <section>
-      <%= "Graduation Year: " + @user.grad_year.to_s %>
+      <b>Graduation Year:</b>
+      <%= @user.grad_year.to_s %>
     </section>
     <section>
-      <%= "Major: " + @user.major %>
+      <b>Major:</b>
+      <%= @user.major %>
     </section>
       <% if @user.admin? %>
         <section>
