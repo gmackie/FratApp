@@ -17,6 +17,7 @@ group :development, :test do
   gem 'spork-rails', '4.0.0'
   gem 'guard-spork', '1.5.0'
   gem 'childprocess', '0.3.6'
+  gem 'quiet_assets'
 end
 
 group :test do
@@ -55,3 +56,23 @@ group :production do
   gem 'pg', '0.15.1'
   gem 'rails_12factor', '0.0.2'
 end
+
+gem 'jquery-turbolinks'
+gem 'uuidtools'
+gem 'devise'
+gem 'zurb-foundation'
+gem 'carrierwave'
+gem 'twitter'
+gem 'json'
+gem 'koala'
+gem 'linkedin'
+gem 'omniauth'
+gem 'omniauth-facebook', '1.4.0'
+gem 'omniauth-github'
+gem 'omniauth-google-oauth2'
+gem 'omniauth-linkedin'
+gem 'omniauth-twitter'
+gem 'rmagick'
+gem 'simple_form'
+gem 'thin'
+

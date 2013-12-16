@@ -1,4 +1,5 @@
 class GroupsController < ApplicationController
+  before_filter :authenticate_user!
   before_action :signed_in_user,
                 only: [:index, :edit, :update, :destroy]
   before_action :admin_user,     only: [:edit, :update, :destroy]
@@ -13,6 +14,7 @@ class GroupsController < ApplicationController
     @microposts = @group.microposts.paginate(page: params[:page])
     if @users.include? current_user
       @micropost = current_user.microposts.build
+
     end
     @comment = Comment.new
   end
@@ -24,6 +26,7 @@ class GroupsController < ApplicationController
 
   def create
     @group = Group.new(groups_params)
+    @group.users<< current_user
     if @group.save
       flash[:success] = "Group Created!"
       redirect_to @group
