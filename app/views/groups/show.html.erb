@@ -1,32 +1,14 @@
 <% provide(:title, @group.name) %>
-<div class="row">
-  <aside class="span4">
-    <section>
-      <h1>
-        <%= image_for @group %>
-        <%= @group.name %>
-      </h1>
-    </section>
-    <% if @group.users.include? current_user %>
-    <section>
-      <%= render 'shared/micropost_form' %>
-    </section>
-    <% end %>
-    <section>
-      <% if @users.any? %>
-        <ol class="users">
-          <%= render @users %>
-        </ol>
-      <% end %> 
-    </section>
-  </aside>
-  <div class="span8">
-    <% if @group.microposts.any? %>
-      <h3>Microposts (<%= @group.microposts.count %>)</h3>
-      <ol class="microposts">
-        <%= render @microposts %>
-      </ol>
-      <%= will_paginate @microposts %>
-    <% end %>
-  </div>
-</div>
+<h1>
+  <%= image_for @group, :size => 128 %>
+  <%= @group.name %>
+</h1>
+<section>
+  <%= render 'shared/micropost_form' %>
+</section>
+<% if @group.microposts.any? %>
+  <ol class="microposts">
+    <%= render @microposts %>
+  </ol>
+  <%= will_paginate @microposts %>
+<% end %>
