@@ -44,4 +44,8 @@ module SessionsHelper
   def store_location
     session[:return_to] = request.url if request.get?
   end
+
+  def public_pages
+    [root_path, signin_path, about_path, help_path, contact_path, signup_path]
+  end
 end
