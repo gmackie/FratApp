@@ -1,23 +1,8 @@
-<% if signed_in? %> 
-<h3>Micropost Feed</h3>
+      <h3>Micropost Feed</h3>
       <section>
         <%= render 'shared/micropost_form' %>
       </section>
       <ol class="microposts">
         <%= render @microposts %>
       </ol>
-      <%= will_paginate @microposts %>
-<% else %>
-  <div class="center hero-unit">
-    <h1>Welcome to Frat App</h1>
-
-    <h2>
-      The one-stop-shop for all of your frat needs
-    </h2>
-
-    <%= link_to "Sign up now!", signup_path, 
-                                class: "btn btn-large btn-primary" %>
-  </div>
-
-  <%= link_to image_tag("deltau.png", alt: "DU"), 'http://deltau.org/' %>
-<% end %>
+      <%= will_paginate @microposts %>      
