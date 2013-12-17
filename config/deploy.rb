@@ -2,7 +2,7 @@
 require "bundler/capistrano"
 
 set :scm,             :git
-set :repository,      "git@codeplane.com:gmackie/FratApp.git"
+set :repository,      "git@github.com:gmackie/FratApp.git"
 set :branch,          "origin/master"
 set :migrate_target,  :current
 set :ssh_options,     { :forward_agent => true }
