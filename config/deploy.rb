@@ -14,9 +14,9 @@ set :user,            "deployer"
 set :group,           "staff"
 set :use_sudo,        false
 
-role :web,    fratapp.dongs.in
-role :app,    fratapp.dongs.in
-role :db,     fratapp.dongs.in, :primary => true
+role :web,    "fratapp.dongs.in"
+role :app,    "fratapp.dongs.in"
+role :db,     "fratapp.dongs.in", :primary => true
 
 set(:latest_release)  { fetch(:current_path) }
 set(:release_path)    { fetch(:current_path) }
