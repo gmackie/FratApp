@@ -9,6 +9,10 @@ gem 'faker', '1.1.2'
 gem 'will_paginate', '3.0.4'
 gem 'bootstrap-will_paginate', '0.0.9'
 gem 'rails_autolink', '1.1.5'
+gem 'capistrano'
+gem 'rvm-capistrano'
+gem 'unicorn'
+gem 'bigdecimal'
 
 group :development, :test do
   gem 'sqlite3', '1.3.8'
