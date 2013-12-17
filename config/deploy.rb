@@ -10,8 +10,7 @@ set :rails_env,       "production"
 set :deploy_to,       "/home/ubuntu/FratApp"
 set :normalize_asset_timestamps, false
 
-set :user,            "deployer"
-set :group,           "staff"
+set :user,            "ubuntu"
 set :use_sudo,        false
 
 role :web,    "fratapp.dongs.in"
